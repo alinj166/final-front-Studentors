@@ -1,0 +1,66 @@
+
+<section class="ad-post bg-gray py-5">
+    <div class="container">
+        <form [formGroup]="serviceDemForm" (submit)="onAjouter()" >
+            <!-- Post Your ad start -->
+            <fieldset class="border border-gary p-4 mb-5">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>Poster un service demandé</h3>
+                        </div>
+                        <div class="col-lg-6">
+                            <h6 class="font-weight-bold pt-4 pb-1">nom du service</h6>
+                            <input type="text" class="border w-100 p-2 bg-white text-capitalize" formControlName="titre" placeholder="Ajouter nom du service" 
+                             >
+                             <span style="color:red" *ngIf="titre && titre.invalid &&titre.touched">This input filed is required</span>
+                            
+                        </div>
+                       
+                        <div class="col-lg-6">
+                            <h6 class="font-weight-bold pt-4 pb-1"> Domaine</h6>
+                            <input  id="inputGroupSelect" formControlName="domaine" class="w-100">
+                            <span style="color:red" *ngIf="domaine && domaine.invalid && domaine.touched">This input filed is required</span>
+                           
+                            
+                            <div class="price">
+                                <h6 class="font-weight-bold pt-4 pb-1">Prix ​​du piece (DTT):</h6>
+                                <div class="row px-3">
+                                    <div class="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                                        <input type="number" formControlName="prix" class="border-0 py-2 w-100 price" placeholder="prix"
+                                            id="price">
+                                    </div>
+                               
+                                </div>
+                            </div>
+
+                    
+                              <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
+                              <textarea description="title" formControlName="description" class="border p-3 w-100"  rows="7" placeholder="Écrivez les détails de votre service"></textarea>
+                           
+                              <button [disabled]="serviceDemForm.invalid" class="btn btn-primary">Poster</button>
+
+                         
+                        </div>
+                    </div>
+            </fieldset>
+            </form>
+            </div>
+         
+
+              <div hidden class="alert alert-danger "   data-delay="100" aria-atomic="true" aria-live="assertive" style="position:fixed; top: 5rem; right: 3rem; min-width:400PX; " >
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+
+                <h4 class="alert-heading"  >Error!</h4>
+                <h6>echec</h6>
+           
+              </div>
+
+              <div hidden class="alert alert-danger "   data-delay="100" aria-atomic="true" aria-live="assertive" style="position:fixed; top: 5rem; right: 3rem; min-width:400PX; " >
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+        
+                <h4 class="alert-heading"  >Error!</h4>
+                <h6>good</h6>
+           
+              </div>
+       
+</section>
